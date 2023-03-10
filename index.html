@@ -1,16 +1,36 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head> <title> Webpage </title>
-<body style="background-color:gold;">
-
-<a href="https://gmail.com">Click?</a>
-<h1 style="color:blue;">45 : 2022</h1>
-<h1 style="color:blue"> 28 : 2022 </h1>
-<h1 style="color:blue"> 34 : 2022 </h1>
-<p style="font-size=300%;"><strong style="color:Green;">2022 - 2023</strong></p>
-<a href="https://www.youtube.com/">老聽老唱<small></small></a>
-<p>H<sub>2</sub>O</p>
-<p>x<sup>1</sup> + x<sup>2</sup> = 2x<sup>2</sup></p>
-
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <p> A simple calculator </p>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display">
+        <input type="text" id="result" readonly>
+      </div>
+      <div class="buttons">
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="appendToDisplay('/')">÷</button>
+        <button onclick="appendToDisplay('*')">×</button>
+        <button onclick="appendToDisplay('-')">-</button>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('+')">+</button>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="appendToDisplay('.')">.</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
