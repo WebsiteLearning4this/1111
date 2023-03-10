@@ -5,6 +5,18 @@ function appendToDisplay(value) {
   document.getElementById('result').value = displayValue;
 }
 
+function ez() {
+  if(displayValue == 0 && appendToDisplay) {
+    document.getElementById('result').innerHTML = 'sorry, need a text behind'
+  } else if(displayValue !== 0 && appendToDisplay) {
+    document.getElementById('result').value = displayValue;
+  }
+}
+
+setTimeout(() => {
+  ez()
+}, 0);
+
 function clearDisplay() {
   displayValue = '';
   document.getElementById('result').value = '';
