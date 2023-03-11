@@ -7,16 +7,16 @@ let speed = 5;
 
 function update() {
   // Move player based on arrow keys
-  if (keys.ArrowLeft) {
+  if (keys.ArrowLeft || keys.a) {
     x -= speed;
   }
-  if (keys.ArrowRight) {
+  if (keys.ArrowRight || keys.d) {
     x += speed;
   }
-  if (keys.ArrowUp) {
+  if (keys.ArrowUp || keys.w) {
     y -= speed;
   }
-  if (keys.ArrowDown) {
+  if (keys.ArrowDown || keys.s) {
     y += speed;
   }
 
