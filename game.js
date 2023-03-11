@@ -7,19 +7,19 @@ let playerY = 175;
 document.addEventListener("keydown", movePlayer);
 
 function movePlayer(event) {
-  if (event.keyCode === 37) {  // Left arrow
+  if (event.keyCode === 37 || key.a) {  // Left arrow
     playerX -= 10;
     player.style.left = `${playerX}px`;
   }
-  else if (event.keyCode === 39) {  // Right arrow
+  else if (event.keyCode === 39 || key.d) {  // Right arrow
     playerX += 10;
     player.style.left = `${playerX}px`;
   }
-  else if (event.keyCode === 38) {  // Up arrow
+  else if (event.keyCode === 38 || key.w) {  // Up arrow
     playerY -= 10;
     player.style.top = `${playerY}px`;
   }
-  else if (event.keyCode === 40) {  // Down arrow
+  else if (event.keyCode === 40 || key.s) {  // Down arrow
     playerY += 10;
     player.style.top = `${playerY}px`;
   }
