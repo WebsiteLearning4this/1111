@@ -1,16 +1,3 @@
-#gameBoard {
-  width: 400px;
-  height: 400px;
+canvas {
   border: 2px solid black;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.mole {
-  width: 100px;
-  height: 100px;
-  background-color: brown;
-  border: 1px solid black;
-  display: none;
-  cursor: pointer;
 }
