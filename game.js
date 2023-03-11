@@ -1,41 +1,33 @@
 const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
 
-let x = 50;
-let y = 50;
-let speed = 5;
+// Create a renderer and add it to the DOM
+const renderer = new THREE.WebGLRenderer({ canvas });
+renderer.setSize(canvas.width, canvas.height);
 
-function update() {
-  // Move player based on arrow keys
-  if (keys.ArrowLeft || keys.a) {
-    x -= speed;
-  }
-  if (keys.ArrowRight || keys.d) {
-    x += speed;
-  }
-  if (keys.ArrowUp || keys.w) {
-    y -= speed;
-  }
-  if (keys.ArrowDown || keys.s) {
-    y += speed;
-  }
+// Create a camera and add it to the scene
+const fov = 75;
+const aspect = canvas.width / canvas.height;
+const near = 0.1;
+const far = 1000;
+const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+camera.position.z = 5;
 
-  // Draw player
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillRect(x, y, 50, 50);
+// Create a cube and add it to the scene
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
 
-  // Schedule next update
-  requestAnimationFrame(update);
+// Create a scene and add the camera and cube to it
+const scene = new THREE.Scene();
+scene.add(camera);
+scene.add(cube);
+
+// Render the scene
+function render() {
+  requestAnimationFrame(render);
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
+  renderer.render(scene, camera);
 }
-
-// Track arrow key state
-const keys = {};
-window.addEventListener("keydown", event => {
-  keys[event.key] = true;
-});
-window.addEventListener("keyup", event => {
-  keys[event.key] = false;
-});
-
-// Start game loop
-requestAnimationFrame(update);
+render();
