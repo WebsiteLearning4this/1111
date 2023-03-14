@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Game</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
-  <body>
-    <h1>My Game</h1>
-    <div id="gameBoard">
-      <div id="player"></div>
-    </div>
-    <script src="game.js"></script>
-  </body>
+<head>
+	<title>Calculator</title>
+	<script src="calculator.js"></script>
+</head>
+<body>
+	<h1>Calculator</h1>
+	<form>
+		<input type="text" id="input" disabled>
+		<br>
+		<input type="button" value="1" onclick="numberPressed(1)">
+		<input type="button" value="2" onclick="numberPressed(2)">
+		<input type="button" value="3" onclick="numberPressed(3)">
+		<input type="button" value="+" onclick="operatorPressed('+')">
+		<br>
+		<input type="button" value="4" onclick="numberPressed(4)">
+		<input type="button" value="5" onclick="numberPressed(5)">
+		<input type="button" value="6" onclick="numberPressed(6)">
+		<input type="button" value="-" onclick="operatorPressed('-')">
+		<br>
+		<input type="button" value="7" onclick="numberPressed(7)">
+		<input type="button" value="8" onclick="numberPressed(8)">
+		<input type="button" value="9" onclick="numberPressed(9)">
+		<input type="button" value="x" onclick="operatorPressed('*')">
+		<br>
+		<input type="button" value="0" onclick="numberPressed(0)">
+		<input type="button" value="." onclick="numberPressed('.')">
+		<input type="button" value="=" onclick="equalsPressed()">
+		<input type="button" value="÷" onclick="operatorPressed('/')">
+		<br>
+		<input type="button" value="C" onclick="clearPressed()">
+	</form>
+</body>
 </html>
